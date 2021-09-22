@@ -22,6 +22,8 @@ const handleUserInput = ((key) => { //callback function
     process.exit();
     }
 })
+
+setupInput()
  
 
 
