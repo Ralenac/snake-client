@@ -1,10 +1,9 @@
 const net = require("net");
-const { moveCursor } = require("readline");
 
 let connection;
 
 const handleUserInput = ((key) => { //callback function
-console.log("key pressed: "+ key)
+console.log("key pressed: "+ key) //we can see in node what we are typing
   conn = connection // without this -> error undefined
   // \u0003 maps to ctrl+c input
   if (key === '\u0003') {
@@ -38,6 +37,6 @@ const setupInput = (conn) => {
 
 
 
-setupInput()
+// setupInput()
 
 module.exports = {setupInput};
