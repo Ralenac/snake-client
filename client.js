@@ -14,7 +14,7 @@ const connect = function () {
   conn.on('connect', () => { 
     console.log("Successfully connected to game server" );
     conn.write(`Name: ${name}`) // how to send the information to the server
-    conn.write('finally')
+    conn.write('Say: fun')
     // setTimeout (() => {
     //   conn.write("Move: up");
     // }, 50)
@@ -41,7 +41,6 @@ const connect = function () {
   return conn;
 };
 
-console.log("Connecting ...");
-connect();
+
 
 module.exports = {connect};
