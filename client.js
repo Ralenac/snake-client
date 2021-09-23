@@ -24,10 +24,10 @@ const connect = function () {
 
   //Supported Move Commands
 
-// "Move: up" - move up one square (unless facing down)
-// "Move: down" - move down one square (unless facing up)
-// "Move: left" - move left one square (unless facing right)
-// "Move: right" - move left one square (unless facing left)
+//w -> "Move: up" - move up one square (unless facing down)
+//s -> "Move: down" - move down one square (unless facing up)
+//a -> "Move: left" - move left one square (unless facing right)
+//d -> "Move: right" - move left one square (unless facing left)
   
   
   // interpret incoming data as text

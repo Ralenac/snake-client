@@ -1,5 +1,32 @@
 const net = require("net");
-const setupInput = function () {
+const { moveCursor } = require("readline");
+
+let connection;
+
+const handleUserInput = ((key) => { //callback function
+console.log("key pressed: "+ key)
+  conn = connection // without this -> error undefined
+  // \u0003 maps to ctrl+c input
+  if (key === '\u0003') {
+    process.exit();
+   }
+   if (key === 'w') {
+     conn.write("Move: up");
+   }
+   if (key === 's') {
+     conn.write("Move: down")
+   }
+   if (key === 'a') {
+     conn.write("Move: left")
+   }
+   if (key === 'd') {
+     conn.write("Move: right")
+   }
+
+})
+
+const setupInput = (conn) => {
+  connection = conn; //to accept an object that lets you interact with the server.
   const stdin = process.stdin;
   stdin.setRawMode(true);
   stdin.setEncoding("utf8");
@@ -9,12 +36,7 @@ const setupInput = function () {
   return stdin;
 };
 
-const handleUserInput = ((key) => { //callback function
-   // \u0003 maps to ctrl+c input
-   if (key === '\u0003') {
-    process.exit();
-    }
-})
+
 
 setupInput()
 
